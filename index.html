@@ -1,3 +1,5 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Rita Palermo</title>
 <meta name="description" content="Portfolio profesional de Rita Palermo: administración en salud y análisis de datos, con proyectos de NLP y estadística aplicada a salud.">
 <meta property="og:type" content="profile">
@@ -590,6 +592,46 @@
     border-radius:10px;
     box-shadow:0 20px 60px -12px rgba(0,0,0,0.6);
   }
+
+  /* ---------- language toggle ---------- */
+  .topbar-inner{ flex-wrap:wrap; row-gap:8px; }
+  .lang-toggle{
+    display:inline-flex;
+    border:1px solid var(--line);
+    border-radius:6px;
+    overflow:hidden;
+    flex-shrink:0;
+  }
+  .lang-toggle button{
+    font-family:"IBM Plex Mono", ui-monospace, monospace;
+    font-size:0.74rem;
+    letter-spacing:0.06em;
+    padding:5px 10px;
+    border:0;
+    background:transparent;
+    color:var(--ink-soft);
+    cursor:pointer;
+  }
+  .lang-toggle button + button{ border-left:1px solid var(--line); }
+  .lang-toggle button[aria-pressed="true"]{
+    background:var(--teal);
+    color:#f4f8f6;
+  }
+  .lang-toggle button:focus-visible{ outline:2px solid var(--focus); outline-offset:-2px; }
+  html[lang="en"] .tl-item.unpaid .tl-role::after{ content:"clinical internship"; }
+
+  /* ---------- mobile layout ---------- */
+  @media (max-width:640px){
+    .hero{ grid-template-columns:1fr; gap:20px; justify-items:start; }
+    .portrait-frame{ width:112px; height:112px; }
+    .vitals{ grid-template-columns:repeat(2,1fr); }
+    .vital:nth-child(odd){ border-left:none; }
+    .vital:nth-child(n+3){ border-top:1px solid var(--line); }
+    .tl-item{ grid-template-columns:1fr; gap:8px; }
+    .proj-top{ flex-direction:column; }
+    .proj-source{ text-align:left; }
+    nav.toplinks{ flex-wrap:wrap; gap:4px 14px; }
+  }
 </style>
 
 <div class="topbar">
@@ -602,6 +644,10 @@
       <a href="#formacion">Formación</a>
       <a href="#contacto">Contacto</a>
     </nav>
+    <div class="lang-toggle" role="group" aria-label="Idioma / Language">
+      <button type="button" data-lang="es" aria-pressed="true">ES</button>
+      <button type="button" data-lang="en" aria-pressed="false">EN</button>
+    </div>
   </div>
 </div>
 
@@ -842,7 +888,7 @@
       </div>
       <div class="edu-card lang">
         <h3>Inglés</h3>
-        <div class="org">Nivel intermedio</div>
+        <div class="org">Nivel básico</div>
         <span class="status">Idioma</span>
       </div>
     </div>
@@ -865,7 +911,7 @@
 
 </main>
 
-<footer>Rita Verónica Palermo — actualizado septiembre 2026</footer>
+<footer>Rita Verónica Palermo — actualizado octubre 2026</footer>
 
 <div class="lightbox-overlay" id="lightboxOverlay">
   <img id="lightboxImg" src="" alt="">
@@ -895,4 +941,81 @@
   document.addEventListener('keydown', function(e){
     if (e.key === 'Escape') { overlay.classList.remove('open'); overlayImg.src = ''; }
   });
+</script>
+
+<script>
+(function(){
+  var I18N = {"Rita Palermo": "Rita Palermo", "Rita": "Rita", "Palermo": "Palermo", "Experiencia": "Experience", "Habilidades": "Skills", "Proyectos": "Projects", "Formación": "Education", "Contacto": "Contact", "Rita Verónica Palermo": "Rita Verónica Palermo", "Gestión administrativa en salud · en formación en análisis de datos": "Healthcare administration · transitioning into data analysis", "21 años organizando la recepción, la agenda y la facturación de consultorios odontológicos y médicos en Santa Fe. Desde 2025 sumé Python, SQL y Power BI para leer esos mismos datos con otra profundidad.": "21 years running reception, scheduling and billing at dental and medical practices in Santa Fe, Argentina. Since 2025 I have added Python, SQL and Power BI to read that same data in greater depth.", "Escribir un correo": "Send an email", "342 154 767 578": "+54 9 342 476 7578", "21": "21", "años en administración de salud": "years in healthcare administration", "6": "6", "hospitales y sanatorios de práctica": "hospitals and clinics (clinical internships)", "Sauce Viejo": "Sauce Viejo", "Santa Fe · movilidad propia": "Santa Fe, Argentina · own transportation", "Full-time": "Full-time", "disponibilidad inmediata": "immediate availability", "Trayectoria": "Career", "Experiencia laboral": "Work experience", "2009 — 2025": "2009 — 2025", "16 años": "16 years", "Administrativa recepcionista": "Administrative receptionist", "Consultorios odontológicos y médicos, Santa Fe": "Dental and medical practices, Santa Fe, Argentina", "Recepción de pacientes y atención telefónica, con derivación de consultas": "Patient reception and phone support, including routing of inquiries", "Coordinación de turnos y gestión de agendas de varios profesionales": "Appointment coordination and calendar management for several practitioners", "Facturación de prácticas odontológicas y oftalmológicas": "Billing of dental and ophthalmology procedures", "Registro y actualización de datos de pacientes en sistema Arca": "Patient record entry and updates in the Arca system", "Elaboración de planillas y reportes con paquete Office": "Spreadsheets and reports built with Microsoft Office", "Gestión de redes sociales para comunicación con pacientes": "Social media management for patient communication", "2004 — 2009": "2004 — 2009", "5 años": "5 years", "Consultorio Odontológico Dr. Roberto Gutiérrez": "Dr. Roberto Gutiérrez Dental Practice", "Recepción y registro de pacientes": "Patient reception and registration", "Organización de turnos y seguimiento de la agenda del profesional": "Appointment scheduling and follow-up of the dentist's calendar", "Emisión y control de facturación de prácticas odontológicas": "Issuing and checking invoices for dental procedures", "2004 — 2007": "2004 — 2007", "períodos breves": "short rotations", "Técnico en Diagnóstico por Imágenes": "Diagnostic Imaging Technician", "Hosp. Iturraspe · Hosp. de Niños · Hosp. Cullen · Hosp. San Jerónimo · San. Santa Fe · San. Mayo": "Iturraspe Hospital · Children's Hospital · Cullen Hospital · San Jerónimo Hospital · Santa Fe Sanatorium · Mayo Sanatorium", "Asistencia en servicios de rayos X, tomografía y ecografía": "Assisted in X-ray, CT and ultrasound units", "Preparación de pacientes para estudios": "Patient preparation for imaging studies", "Colaboración con técnicos radiólogos y personal médico": "Collaboration with radiology technicians and medical staff", "Carga y verificación de datos de pacientes en sistemas internos": "Entry and verification of patient data in internal systems", "Herramientas": "Toolkit", "Dos formas de ordenar información": "Two ways of organizing information", "Atención & gestión": "Care & administration", "Lo que sostiene el día a día de un consultorio.": "What keeps a practice running day to day.", "Recepción de pacientes": "Patient reception", "Gestión de agendas": "Calendar management", "Sistema Arca": "Arca system", "Facturación médica": "Medical billing", "Posnet": "Card payment terminals (Posnet)", "Paquete Office": "Microsoft Office", "Redes sociales": "Social media", "Datos & análisis": "Data & analytics", "Lo nuevo, en formación desde 2025 (Coderhouse).": "The new chapter, in training since 2025 (Coderhouse).", "Python": "Python", "Pandas · Numpy": "Pandas · Numpy", "SQL": "SQL", "Power BI": "Power BI", "Excel avanzado": "Advanced Excel", "Scikit-learn": "Scikit-learn", "Matplotlib · Seaborn": "Matplotlib · Seaborn", "Carrera de Data Science · Coderhouse": "Data Science program · Coderhouse", "De la recepción a los datos: bienestar y salud, medidos": "From the front desk to the data: health and well-being, measured", "Análisis de sentimiento en reseñas de medicamentos (NLP)": "Sentiment analysis of drug reviews (NLP)", "Dataset: Drug Review Dataset": "Dataset: Drug Review Dataset", "UCI Machine Learning Repository / Kaggle": "UCI Machine Learning Repository / Kaggle", "Trabajo final de la carrera: clasificar si la experiencia de un paciente con un medicamento fue positiva, negativa o neutral a partir del texto libre de su reseña — la misma pregunta que se hace, de manera intuitiva, todos los días en la recepción de un consultorio.": "Final project of the program: classifying whether a patient's experience with a medication was positive, negative or neutral from the free text of their review — the same question that is intuitively asked every day at a practice's front desk.", "10.110": "10,110", "reseñas de pacientes analizadas": "patient reviews analyzed", "75,1%": "75.1%", "accuracy del modelo final": "accuracy of the final model", "3": "3", "clases: positivo · neutral · negativo": "classes: positive · neutral · negative", "2": "2", "modelos comparados (clásico vs. deep learning)": "models compared (classical vs. deep learning)", "Vocabulario dominante tras la limpieza de texto (spaCy)": "Dominant vocabulary after text cleaning (spaCy)", "Matriz de confusión — baseline TF-IDF + Regresión Logística": "Confusion matrix — TF-IDF + Logistic Regression baseline", "Curvas de la red LSTM: el punto exacto donde empieza a sobreajustar": "LSTM network curves: the exact point where it starts to overfit", "Limpieza y control de nulos/duplicados sobre 10.110 registros crudos": "Cleaning and null/duplicate checks on 10,110 raw records", "Preprocesamiento de texto con spaCy y scispaCy (vocabulario médico)": "Text preprocessing with spaCy and scispaCy (medical vocabulary)", "Etiquetado de sentimiento con VADER, N-gramas y nubes de palabras por clase": "Sentiment labeling with VADER, n-grams and word clouds by class", "Baseline TF-IDF + Regresión Logística vs. red neuronal Bidirectional LSTM": "TF-IDF + Logistic Regression baseline vs. Bidirectional LSTM neural network", "Interpretabilidad: qué palabras empujan una reseña a positiva o negativa": "Interpretability: which words push a review toward positive or negative", "Diagnóstico de sobreajuste y propuestas de mejora (BERT/BioBERT, early stopping)": "Overfitting diagnosis and improvement proposals (BERT/BioBERT, early stopping)", "\"El modelo lineal, más simple, terminó siendo tan preciso como la red neuronal — y mucho más fácil de explicar.\" Esa conclusión, y no solo el accuracy, es lo que se evalúa en un análisis de datos aplicado a salud.": "\"The simpler linear model ended up being as accurate as the neural network — and much easier to explain.\" That conclusion, and not just the accuracy, is what is evaluated in data analysis applied to health.", "Ver notebook completo →": "View full notebook →", "Bienestar y burnout: qué explica (y qué no) el agotamiento laboral": "Well-being and burnout: what explains (and what doesn't) work exhaustion", "Dataset: RRHH multinacional": "Dataset: multinational HR data", "3.000 empleados · 6 países · 25 variables": "3,000 employees · 6 countries · 25 variables", "Análisis exploratorio y estadístico sobre los factores asociados al agotamiento laboral: horas de trabajo, sueño, actividad física, modalidad remota, país y departamento. Dos hipótesis de partida, puestas a prueba con estadística — no solo con intuición.": "Exploratory and statistical analysis of the factors associated with work burnout: working hours, sleep, physical activity, remote work, country and department. Two starting hypotheses, tested with statistics — not just intuition.", "3.000": "3,000", "empleados, 0 nulos ni duplicados": "employees, 0 nulls or duplicates", "países comparados": "countries compared", "p = 0,82": "p = 0.82", "ANOVA: sin diferencia significativa por área": "ANOVA: no significant difference by department", "2 / 2": "2 / 2", "hipótesis iniciales, descartadas con datos": "initial hypotheses, ruled out with data", "Nivel de estrés promedio por país (Plotly)": "Average stress level by country (Plotly)", "Correlaciones entre variables: casi todas, cercanas a cero": "Correlations between variables: nearly all close to zero", "Estrés vs. agotamiento, por modalidad de trabajo: sin pendiente": "Stress vs. burnout by work mode: no slope", "Limpieza y control de calidad sobre 3.000 registros × 25 variables": "Data cleaning and quality control on 3,000 records × 25 variables", "Feature engineering: binning de edad/horas/sueño, variable \"Balance físico\"": "Feature engineering: binning of age/hours/sleep, \"Physical balance\" variable", "Mapa coroplético interactivo de estrés por país (Plotly Express)": "Interactive choropleth map of stress by country (Plotly Express)", "Análisis univariado: curtosis, QQ-plot, medidas de dispersión": "Univariate analysis: kurtosis, QQ plot, measures of dispersion", "Prueba de hipótesis (ANOVA) para validar diferencias entre grupos": "Hypothesis testing (ANOVA) to validate differences between groups", "Análisis multivariado: matriz de correlación y regresión segmentada": "Multivariate analysis: correlation matrix and segmented regression", "Estrés, sueño, actividad física, país, departamento: ninguno explicó el agotamiento por sí solo, y el ANOVA lo confirmó (p = 0,82). No forzar una historia donde los datos no la muestran es, también, una conclusión válida.": "Stress, sleep, physical activity, country, department: none of them explained burnout on its own, and the ANOVA confirmed it (p = 0.82). Not forcing a story where the data does not show one is also a valid conclusion.", "Estudios y certificaciones": "Education and certifications", "Técnico Superior en Diagnóstico por Imágenes": "Higher Technician in Diagnostic Imaging", "Instituto Cruz Roja Argentina · 3 años, presencial": "Cruz Roja Argentina Institute · 3 years, in person", "Título con validez nacional · promoción 2008": "Nationally valid degree · class of 2008", "Carrera de Data Scientist": "Data Scientist program", "Coderhouse · 40 semanas": "Coderhouse · 40 weeks", "Certificado · 17 de marzo de 2026": "Certified · March 17, 2026", "Facturación Sanatorial": "Healthcare (sanatorium) billing", "Academia Sapiens": "Academia Sapiens", "Finalizado": "Completed", "Inglés": "English", "Nivel básico": "Basic level", "Idioma": "Language", "Disponibilidad inmediata": "Immediate availability", "Conversemos": "Let's talk", "Busco un rol administrativo en salud, atención al paciente o, cada vez más, uno que empiece a cruzar ese mundo con el análisis de datos.": "I am looking for an administrative role in healthcare, patient care or — increasingly — one that starts to bring that world together with data analysis.", "Correo": "Email", "ritta2286@gmail.com": "ritta2286@gmail.com", "Teléfono": "Phone", "Zona": "Location", "Sauce Viejo, Santa Fe": "Sauce Viejo, Santa Fe, Argentina", "Rita Verónica Palermo — actualizado octubre 2026": "Rita Verónica Palermo — updated October 2026", "Retrato de Rita Verónica Palermo": "Portrait of Rita Verónica Palermo", "Nube de palabras más frecuentes en las reseñas de medicamentos": "Word cloud of the most frequent words in the drug reviews", "Matriz de confusión del modelo TF-IDF más Regresión Logística": "Confusion matrix of the TF-IDF plus Logistic Regression model", "Curvas de entrenamiento y validación de la red neuronal LSTM": "Training and validation curves of the LSTM neural network", "Mapa coroplético del nivel de estrés promedio por país": "Choropleth map of average stress level by country", "Mapa de calor de correlaciones entre variables numéricas de salud laboral": "Correlation heatmap of numerical workplace-health variables", "Dispersión de estrés vs. agotamiento segmentada por modalidad de trabajo": "Scatter plot of stress vs. burnout segmented by work mode", "Título de Técnico Superior en Diagnóstico por Imágenes, Instituto Cruz Roja Argentina, promoción 2008": "Diploma of Higher Technician in Diagnostic Imaging, Cruz Roja Argentina Institute, class of 2008", "Certificado de la Carrera de Data Scientist, Coderhouse, emitido a Rita Palermo el 17 de marzo de 2026": "Certificate of the Data Scientist program, Coderhouse, issued to Rita Palermo on March 17, 2026"};
+  var textItems = [], attrItems = [];
+  var TEL_ES = 'tel:342154767578', TEL_EN = 'tel:+5493424767578';
+
+  function norm(s){ return s.replace(/\s+/g,' ').trim(); }
+
+  function collect(){
+    var walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, null);
+    var n;
+    while((n = walker.nextNode())){
+      var parent = n.parentNode && n.parentNode.nodeName;
+      if(parent === 'SCRIPT' || parent === 'STYLE') continue;
+      var key = norm(n.nodeValue);
+      if(key && Object.prototype.hasOwnProperty.call(I18N, key)){
+        textItems.push({node:n, es:n.nodeValue, key:key});
+      }
+    }
+    document.querySelectorAll('[alt],[title]').forEach(function(el){
+      ['alt','title'].forEach(function(a){
+        var v = el.getAttribute(a);
+        if(v && Object.prototype.hasOwnProperty.call(I18N, norm(v))){
+          attrItems.push({el:el, attr:a, es:v, key:norm(v)});
+        }
+      });
+    });
+  }
+
+  function apply(lang){
+    textItems.forEach(function(t){
+      if(lang === 'en'){
+        var lead = (t.es.match(/^\s*/) || [''])[0];
+        var trail = (t.es.match(/\s*$/) || [''])[0];
+        t.node.nodeValue = lead + I18N[t.key] + trail;
+      } else {
+        t.node.nodeValue = t.es;
+      }
+    });
+    attrItems.forEach(function(a){
+      a.el.setAttribute(a.attr, lang === 'en' ? I18N[a.key] : a.es);
+    });
+    document.querySelectorAll('a[href^="tel:"]').forEach(function(a){
+      a.setAttribute('href', lang === 'en' ? TEL_EN : TEL_ES);
+    });
+    document.documentElement.setAttribute('lang', lang);
+    document.querySelectorAll('.lang-toggle button').forEach(function(b){
+      b.setAttribute('aria-pressed', String(b.getAttribute('data-lang') === lang));
+    });
+  }
+
+  function initialLang(){
+    try {
+      var q = new URLSearchParams(location.search).get('lang');
+      if(q === 'en' || q === 'es') return q;
+    } catch(e){}
+    try {
+      var s = localStorage.getItem('lang');
+      if(s === 'en' || s === 'es') return s;
+    } catch(e){}
+    var nav = (navigator.language || 'es').toLowerCase();
+    return nav.indexOf('es') === 0 ? 'es' : 'en';
+  }
+
+  collect();
+  apply(initialLang());
+
+  document.querySelectorAll('.lang-toggle button').forEach(function(b){
+    b.addEventListener('click', function(){
+      var lang = b.getAttribute('data-lang');
+      apply(lang);
+      try { localStorage.setItem('lang', lang); } catch(e){}
+    });
+  });
+})();
 </script>
